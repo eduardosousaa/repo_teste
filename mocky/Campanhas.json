@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1758568819154,
+    "nome": "Nova Campanha Teste 2",
+    "status": "inativa",
+    "tipoDeCampanha": "email",
+    "dataInicio": "2025-09-22",
+    "dataFim": "2025-10-22",
+    "destinatarios": 19966,
+    "taxa_abertura": "14.0%",
+    "taxa_clique": "10.8%"
+  },
+  {
+    "id": 1758571939449,
+    "nome": "Nova Campanha 2027",
+    "status": "ativa",
+    "tipoDeCampanha": "email",
+    "dataInicio": "2025-09-22",
+    "dataFim": "2025-10-22",
+    "destinatarios": 5864,
+    "taxa_abertura": "21.9%",
+    "taxa_clique": "7.6%"
+  }
+]

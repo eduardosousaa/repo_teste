@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "origem": "SEFAZ-SP",
+    "numeroCDA": "CDA2025001",
+    "CPF": "12345678901",
+    "dataEmissao": "2025-01-15",
+    "situacao": "Ativa",
+    "valorAtualizado": 15230.75,
+    "tributo": "ICMS",
+    "cpfCnpj": "12345678901"
+  },
+  {
+    "id": 2,
+    "origem": "SEFAZ-RJ",
+    "numeroCDA": "CDA2025002",
+    "CNPJ": "12345678000199",
+    "IE": "ISENTO",
+    "dataEmissao": "2025-02-20",
+    "situacao": "Parcelada",
+    "valorAtualizado": 20350.40,
+    "tributo": "ISS",
+    "cpfCnpj": "12345678000199"
+  },
+  {
+    "id": 3,
+    "origem": "DETRAN-SP",
+    "numeroCDA": "CDA2025003",
+    "renavam": "98765432101",
+    "dataEmissao": "2025-03-05",
+    "situacao": "Em Dívida Ativa",
+    "valorAtualizado": 1250.00,
+    "tributo": "IPVA",
+    "cpfCnpj": "12345678901"
+  },
+  {
+    "id": 4,
+    "origem": "SEFAZ-MG",
+    "numeroCDA": "CDA2025004",
+    "CNPJ": "98765432000188",
+    "dataEmissao": "2025-03-25",
+    "situacao": "Suspensa",
+    "valorAtualizado": 35000.00,
+    "tributo": "ICMS",
+    "cpfCnpj": "98765432000188"
+  },
+  {
+    "id": 5,
+    "origem": "SEFAZ-BA",
+    "numeroCDA": "CDA2025005",
+    "CPF": "98765432100",
+    "dataEmissao": "2025-04-10",
+    "situacao": "Quitada",
+    "valorAtualizado": 500.00,
+    "tributo": "IPTU",
+    "cpfCnpj": "98765432100"
+  }
+]
