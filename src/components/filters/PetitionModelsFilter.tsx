@@ -94,7 +94,7 @@ export default function PetitionModelsFilter({
 				>
 					Limpar Filtros
 				</button>
-				<ActionButton label="Aplicar Filtros"  variant="black" onClick={handleApplyFilters} />
+				<ActionButton label="Aplicar Filtros"  variant="primary" onClick={handleApplyFilters} />
 			</div>
 		</div>
 	);

@@ -142,7 +142,7 @@ export default function FilingLotCdaFilter({
 
 				<ActionButton
 					label="Aplicar Filtros"
-					variant="black"
+					variant="primary"
 					onClick={handleApplyFilters}
 				/>
 			</div>

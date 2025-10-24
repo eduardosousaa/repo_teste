@@ -22,7 +22,7 @@ export const DeleteActionButton: React.FC<DeleteActionButtonProps> = ({
             disabled={disabled || isLoading}
         >
             <Image
-            src="/public/icons/delete.svg"
+            src="/icons/delete.svg"
             alt="Excluir campanha"
             width={20}
             height={20}

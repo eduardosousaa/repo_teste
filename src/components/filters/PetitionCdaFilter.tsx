@@ -140,7 +140,7 @@ export default function PetitionCdaFilter({
 
 				<ActionButton
 					label="Aplicar Filtros"
-					variant="black"
+					variant="primary"
 					onClick={handleApplyFilters}
 				/>
 			</div>

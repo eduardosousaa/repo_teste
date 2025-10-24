@@ -108,7 +108,7 @@ export default function DashboardFilter({
         </button>
         <ActionButton
           label="Aplicar Filtros"
-          variant="black"
+          variant="primary"
           onClick={handleApplyFilters}
         />
       </div>

@@ -6,14 +6,10 @@ import Image from "next/image"
 
 interface EditActionButtonProps {
     onClick: () => void
-    disabled?: boolean
-    isLoading?: boolean
 }
 
 export const EditActionButton: React.FC<EditActionButtonProps> = ({
     onClick,
-    disabled = false,
-    isLoading = false,
 }) => {
     return (
         <button
