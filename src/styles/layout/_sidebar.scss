@@ -1,0 +1,79 @@
+$sidebarWidth: 200px;
+$sidebarCollapsed: 72px;
+
+.sidebarArea {
+  width: $sidebarWidth;
+  background-color: #fff;
+  transition: width .2s ease-in-out, transform .25s ease-in-out, visibility .25s;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: auto;
+  padding: 0.8rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+
+  .sidenav-bg:hover {
+    background-color: $gray-100;
+    border-radius: $border-radius;
+  }
+}
+
+.sidebarArea.collapsed {
+  width: $sidebarCollapsed;
+}
+
+/* texto do item quando colapsado (desktop) */
+.sidebarArea .nav-link span {
+  white-space: nowrap;
+  transition: opacity .15s ease, transform .15s ease, width .15s ease;
+}
+.sidebarArea.collapsed .nav-link span {
+  opacity: 0;
+  width: 0;
+  transform: translateX(-8px);
+  pointer-events: none;
+}
+
+.sidebarArea .nav-link { display: flex; align-items: center; }
+.sidebarArea.collapsed .nav-link { justify-content: center; }
+
+/* ===== MOBILE: sidebar completamente escondida por padrão ===== */
+@include media-breakpoint-down(lg) {
+  .sidebarArea {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1045;
+    height: 100vh;
+
+    /* escondida por padrão */
+    display: none;
+    transform: translateX(-100%);
+  }
+
+  /* quando aberta no mobile */
+  .sidebarArea.mobile-open {
+    display: block;
+    width: $sidebarWidth; 
+    transform: translateX(0);
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.12);
+    background: #fff;
+  }
+
+  /* backdrop atrás da sidebar aberta */
+  .sidebar-backdrop {
+    display: none;
+  }
+  .sidebar-backdrop.show {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1040;
+    background: rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* ===== DESKTOP: sem backdrop ===== */
+@include media-breakpoint-up(lg) {
+  .sidebar-backdrop { display: none !important; }
+}
