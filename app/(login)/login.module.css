@@ -1,0 +1,223 @@
+.section{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 98vh;
+    width: 100%;
+    background-color: #Dff;
+}
+
+.backgroundImage {
+    position: absolute;
+    top: 0;
+    left: -10%; 
+    z-index: 0;
+    width:  40%;
+    height: 60%;
+    background-image: url('../../public/ballback.png');
+    background-size: 100% 100%;
+}
+
+.imageContainer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 5px;
+    width: 40%; 
+    height: 100%;
+    background-image: url('../../public/group46.png');
+    background-size: 100% 100%; 
+}
+
+.logincontainer {
+    width: 50%;
+    height: 70%;
+    top: 20%;
+    left: 25%;
+    border-radius: 30px;
+    background: rgba(214, 208, 208, 0.06);
+    box-shadow: 0px 4px 21.8px 0px rgba(0, 0, 0, 0.25), 
+    54.133px -54.133px 54.133px 0px rgba(165, 165, 165, 0.17) inset, 
+    -54.133px 54.133px 54.133px 0px rgba(255, 255, 255, 0.17) inset;
+    backdrop-filter: blur(54.13333511352539px);
+    position: relative; /* Permite posicionar a imagem dentro do contêiner */
+    display: flex;
+    z-index: 2;
+}
+
+
+
+.logincontainer .chaveiro {
+    width: 40%;
+    height: 80%;
+    padding-top: 5%;
+    display: flex;
+    /* margin-left: 10%; */
+    padding-left: 5%;
+    /* background-color: red;  */
+}
+
+.cabecaLogin {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px;
+    background-color:rgba(255, 255, 255, 0.20);
+   /* margin-right: 30%;*/
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: 5%;
+    height: 90%;
+    width: 320px;
+   /* padding-left: 15px;*/
+}
+
+.cabecaLogin img{
+    width: 75px;
+}
+
+.cabecaLogin h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size:  24px;
+    font-weight: 700;
+    text-align: center;
+    color: #035656;
+}
+
+.cabecaLogin h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: -10px;
+    color: #035656;
+}
+
+.cabecaLogin label {
+    margin-top: 10px;
+}
+
+.cabecaLogin button {
+    margin-top: 10px;
+    background-color: #0CCDCD;
+    color: white;
+    border: none;
+    width: 110px;
+    height: 35px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.cabecaLogin input {
+    /*margin-left: 15px;*/
+    width: 280px; 
+    height: 32px; 
+    padding: 8px; 
+    border-radius: 4px; 
+    border: 1px solid var(--Border, #CED4DA);
+    font-size:  16px;
+    background: var(--cor-vetor, #FFF);
+}
+
+.errorMessage {
+    font-family: 'Roboto', sans-serif;
+    font-size:  12px;
+    padding-bottom: -30px;
+    font-weight: 700;
+    color: red;
+}
+
+@media(max-width: 1013px){
+  .logincontainer .chaveiro {
+      display: none;
+  }
+
+  .logincontainer {
+    width: 50%;
+    height: 70%;
+    top: 17%;
+    left: 23%;
+    border-radius: 30px;
+    background: rgba(214, 208, 208, 0.06);
+    box-shadow: 0px 4px 21.8px 0px rgba(0, 0, 0, 0.25), 
+    54.133px -54.133px 54.133px 0px rgba(165, 165, 165, 0.17) inset, 
+    -54.133px 54.133px 54.133px 0px rgba(255, 255, 255, 0.17) inset;
+    backdrop-filter: blur(54.13333511352539px);
+    position: relative; /* Permite posicionar a imagem dentro do contêiner */
+    display: flex;
+    z-index: 2;
+   }
+
+   .cabecaLogin {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px;
+    background-color:rgba(255, 255, 255, 0.20);
+    /* margin-right: 30%;*/
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: 10%;
+    height: 90%;
+    width: 350px;
+    /* padding-left: 15px;*/
+   }
+}
+
+@media(max-width: 637px){
+  .backgroundImage {
+    position: absolute;
+    top: 0;
+    left: -10%; 
+    z-index: 0;
+    width:  70%;
+    height: 60%;
+    background-image: url('../../public/ballback.png');
+    background-size: 100% 100%;
+  }
+
+  .imageContainer {
+     position: absolute;
+     right: 0;
+     bottom: 0;
+     top: 295px;
+     width: 50%; 
+     height: 70%;
+     background-image: url('../../public/group46.png');
+     background-size: 100% 100%; 
+  }
+
+  .logincontainer {
+    width: 65%;
+    height: 70%;
+    top: 17%;
+    left: 17%;
+    border-radius: 30px;
+    background: rgba(214, 208, 208, 0.06);
+    box-shadow: 0px 4px 21.8px 0px rgba(0, 0, 0, 0.25), 
+    54.133px -54.133px 54.133px 0px rgba(165, 165, 165, 0.17) inset, 
+    -54.133px 54.133px 54.133px 0px rgba(255, 255, 255, 0.17) inset;
+    backdrop-filter: blur(54.13333511352539px);
+    position: relative; /* Permite posicionar a imagem dentro do contêiner */
+    display: flex;
+    z-index: 2;
+   }
+
+   .cabecaLogin input {
+       /*margin-left: 15px;*/
+       width: 90%; 
+       height: 32px; 
+       padding: 8px; 
+       border-radius: 4px; 
+       border: 1px solid var(--Border, #CED4DA);
+       font-size:  16px;
+       background: var(--cor-vetor, #FFF);
+    }
+
+ /*   .logincontainer .chaveiro {
+      display: none;
+    } */
+
+}

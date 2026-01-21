@@ -1,0 +1,161 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    background-color: #008080;
+    padding-top: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 4;
+    transition: width 0.3s ease;
+}
+
+.expanded {
+    width: 250px;
+}
+
+.sidebarList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.images {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    padding-bottom: 20px;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    margin-top: 15px;
+    background-image: url("../../../public/logo.svg");
+    background-size: 100% 100%;
+}
+
+.sidebarItem {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 20px;
+    color: #ffffff;
+    border-bottom: 2px solid #1FCEC9;
+}
+
+.sidebarplus {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.sidebarplus:hover {
+    background: #1FCEC9;
+    border-radius: 15px;
+}
+
+.sidebarItem:hover {
+    background: #1FCEC9;
+    border-radius: 15px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.menuText {
+    opacity: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+    color: #FFFFFF;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.expanded .menuText {
+    opacity: 1;
+    margin-left: 10px;
+}
+
+/*------------------------------------*/
+
+.balloon_div{
+  position: relative;
+}  
+
+.balloon_aviso_div {
+   display: none;
+   position: absolute; 
+   align-items: center;
+   justify-content: center;
+   top: 60px;
+   width: 100%;
+}
+
+.sidebarItem:hover + .balloon_aviso_div {
+  display: flex;
+}
+
+
+.sidebarplus:hover + .balloon_aviso_div {
+  display: flex;
+}
+
+.balloon_aviso_border { 
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  border: 1px solid;
+  background-color: #f3fff1;
+  border-color: #b9edb1;
+}
+
+.balloon_aviso_text {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Archivo-Light", Helvetica;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  white-space: nowrap;
+  color: #299c16;
+}
+
+@media(max-width: 575px){
+   .sidebar {
+       position: fixed;
+       left: -90px;
+       top: 0;
+       width: 90px;
+       height: 100%;
+       background-color: #008080;
+       padding-top: 20px;
+       overflow-y: auto;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       z-index: 4;
+       transition: width 0.3s ease;
+   }
+   
+   .expanded {
+       left: 0;
+       width: 250px;
+   }
+}
