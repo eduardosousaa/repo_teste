@@ -1,6 +1,6 @@
 import {FormGroup, Label, Input} from "reactstrap";
 
-export default function InputForm({id, name, label, register, required, placeholder,disabled, onChange, type, max, min, options,errors, props}){
+export default function InputForm({id, name, label, register, required, placeholder,disabled, onChange, type, min, options,errors, props}){
 
     const  { ref, ...registerField } =  register(`${name}`,
                                          { required: required || false,
@@ -72,7 +72,6 @@ export default function InputForm({id, name, label, register, required, placehol
             innerRef = {ref}
             { ...disabled ? disabled={disabled} : null }
             { ...registerField}
-            { ...max ? max={max} : null}
             { ...min ? min={min} : null}
             { ...onChange ? onChange={onChange} : null}
             type={type}>

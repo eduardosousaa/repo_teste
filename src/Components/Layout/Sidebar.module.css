@@ -3,10 +3,11 @@
     left: 0;
     top: 0;
     width: 150px;
-    height: 100%;
+    height: 100vh;
     background-color: #008080;
     padding-top: 20px;
     overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +59,22 @@
     color: #ffffff;
 }
 
+.sidebarplus2 {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
 .sidebarplus:hover {
+    background: #1FCEC9;
+    border-radius: 15px;
+}
+
+.sidebarplus2:hover {
     background: #1FCEC9;
     border-radius: 15px;
 }
@@ -89,6 +105,16 @@
     margin-left: 10px;
 }
 
+.mini_icon{
+  position: relative;
+}  
+
+.mini_icon_position{
+   position: absolute; 
+   top: 5px;
+   left: -9px;
+}
+
 /*------------------------------------*/
 
 .balloon_div{
@@ -108,8 +134,11 @@
   display: flex;
 }
 
-
 .sidebarplus:hover + .balloon_aviso_div {
+  display: flex;
+}
+
+.sidebarplus2:hover + .balloon_aviso_div {
   display: flex;
 }
 
@@ -158,4 +187,29 @@
        left: 0;
        width: 250px;
    }
+}
+
+
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+
+/* Track */
+.sidebar::-webkit-scrollbar-track {
+  border-radius: 10px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+ 
+/* Handle */
+.sidebar::-webkit-scrollbar-thumb {
+  background:#1FCEC9; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #099797; 
 }

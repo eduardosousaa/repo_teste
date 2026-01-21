@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 
 export  async function GET(request){
 
-    const token1 = (await cookies()).get('token1');
-
+   /*  const token1 = (await cookies()).get('token1');
+ */
     try{
        let token = request.headers.get("authorization");
 
@@ -15,13 +15,25 @@ export  async function GET(request){
                return NextResponse.json({ message: "Usuário já autenticado" }, { status: 200 });
             }else{
                (await cookies()).delete('token1');
-               (await cookies()).set({ name: 'token1', value: token, path: '/'});
+               (await cookies()).set({ domain: process.env.NEXT_PUBLIC_COOKIE_DOMAIN,
+                                       name: 'token1', 
+                                       value: token, 
+                                       path: process.env.NEXT_PUBLIC_COOKIE_SUBDOMAIN,
+                                       httpOnly:true,
+                                       sameSite:"none",
+                                       secure:true});
                return NextResponse.json({ message: "Usuário atual autenticado no módulo com sucesso" }, { status: 200 });
             }
          } */
          // Não autenticado
          /* else{
-            (await cookies()).set({ name: 'token1', value: token, path: '/'});
+            (await cookies()).set({ domain: process.env.NEXT_PUBLIC_COOKIE_DOMAIN,
+                                    name: 'token1', 
+                                    value: token, 
+                                    path: process.env.NEXT_PUBLIC_COOKIE_DOMAIN,
+                                    httpOnly:true,
+                                    sameSite:"none",
+                                    secure:true});
             return NextResponse.json({ message: "Usuário autenticado no módulo com sucesso" }, { status: 200 });
          } */
          return NextResponse.json({ message: "Módulo autenticado com sucesso" }, { status: 200 });

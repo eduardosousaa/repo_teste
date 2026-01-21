@@ -17,7 +17,7 @@ export default function CardItemStyle({names, data}){
                  {Object.keys(e).map((prop,index2) => 
                     index2 != 0 &&
                      <Fragment key={index2}>
-                      { names[index2] != "Ações" && names[index2] != "" ? 
+                      { names[index2] != "Ações" ? 
                          <><Label style={{ fontWeight: "bold", fontSize: "16px" }}>{names[index2]}:</Label> {e[prop]}<br/></> : e[prop]}
                      </Fragment>
                  )}

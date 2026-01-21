@@ -14,6 +14,7 @@
     z-index: 0;
     width:  40%;
     height: 60%;
+   /*  background-image: url('/public/ballback.png'); */
     background-image: url('../../public/ballback.png');
     background-size: 100% 100%;
 }
@@ -29,11 +30,17 @@
     background-size: 100% 100%; 
 }
 
+
 .logincontainer {
+   /*  width: 1148px;
+    height: 627px; */
     width: 50%;
     height: 70%;
+    /* top: 180px;
+    left: 550px; */
     top: 20%;
     left: 25%;
+    
     border-radius: 30px;
     background: rgba(214, 208, 208, 0.06);
     box-shadow: 0px 4px 21.8px 0px rgba(0, 0, 0, 0.25), 
@@ -81,7 +88,6 @@
     font-family: 'Roboto', sans-serif;
     font-size:  24px;
     font-weight: 700;
-    text-align: center;
     color: #035656;
 }
 

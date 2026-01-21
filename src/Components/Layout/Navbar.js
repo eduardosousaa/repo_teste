@@ -18,14 +18,14 @@ import FormTrocarSenha from "../Forms/FormTrocarSenha";
 //Logos
 /* import logo1 from "../../../public/logo-teste1.png";
 import logo2 from "../../../public/logo-teste2.png";
-import logo3 from "../../../public/logo-teste3.png";
- */
+import logo3 from "../../../public/logo-teste3.png"; */
+
 const Navbar = ({showSidebar,setShowSidebar}) => {
 
   const router = useRouter();
   const { username, userId, profileName, getInfo} = useContext(AuthContext);
   const { "token1": token1 } = parseCookies();
-  const { "token2": token2 } = parseCookies(); 
+  const { "token2": token2 } = parseCookies();
   const { "contas": contas } = parseCookies();
   const [contasArray, setContasArray] = useState([]);
 
@@ -52,7 +52,7 @@ const Navbar = ({showSidebar,setShowSidebar}) => {
       setOpen(id);
     }
   };
-
+  
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   function changeModule(type){
@@ -96,7 +96,7 @@ const Navbar = ({showSidebar,setShowSidebar}) => {
         .then(/* (response) => response.status */
               (response) => 
                  response.json().then(data => ({status: response.status, 
-                                                body: data })))
+                                                body: data }))) 
         .then(({status, body}) => {
              switch(status){
                  case 200:
@@ -122,9 +122,7 @@ const Navbar = ({showSidebar,setShowSidebar}) => {
     destroyCookie(undefined,"token1",{path:"/"});
     destroyCookie(undefined,"token2",{path:"/"});
     destroyCookie(undefined,"contas",{path:"/"});
-    if(Constantes.urlFrontAdmin != ""){
-       window.open(Constantes.urlFrontAdmin + "login", "_self");
-    }else{ router.push("/login");}
+    router.push("/login");
   }
 
   /* async function changeAccount(id) {
@@ -234,7 +232,7 @@ const Navbar = ({showSidebar,setShowSidebar}) => {
               <div className={styles.imageLogo}></div>
           </div>
           <ul className={styles.navbarList}>
-             {/*  <li style={{display:"flex"}}>
+              {/* <li style={{display:"flex"}}>
                 <div style={{transform:"skewX(-10deg)",width:"55px",backgroundColor:"#5445ddff"}}>
                     <div style={{transform:"skewX(10deg)",marginLeft:"-15px"}}>
                       <div style={{backgroundImage: `url(${logo1.src})`,
@@ -246,15 +244,15 @@ const Navbar = ({showSidebar,setShowSidebar}) => {
                                    height: '50px'}}></div>
                     </div>
                 </div>
-                <div style={{transform:"skewX(-10deg)",width:"55px",backgroundColor:"rgba(0, 212, 28, 0.6)"}}>
-                    <div style={{transform:"skewX(10deg)",marginTop:"5px",marginLeft:"-3px"}}><FaHandHoldingUsd size={40} color={"#00d41d"}/></div>
+                <div style={{transform:"skewX(-10deg)",width:"55px",backgroundColor:"rgba(255, 201, 40, 0.7)"}}>
+                    <div style={{transform:"skewX(10deg)",marginTop:"5px",marginLeft:"-5px"}}><FcFolder size={50}/></div>
                 </div>
               </li> */}
               <li className={styles.navbarItem} onClick={() => { setShowModal4(!showModal4)}}>
                   <FaBell size={15}/>
                   <div className={styles.alert_number}>
-                     <div className={styles.alert_number_position}> {alerts.filter((a) => a.read == false).length}</div>
-                   </div>
+                    <div className={styles.alert_number_position}> {alerts.filter((a) => a.read == false).length}</div>
+                  </div>
               </li>
               <li className={styles.navbarItem} onClick={() => { setShowModal2(!showModal2)}}>
                   <BsGrid3X3GapFill/>
@@ -269,13 +267,12 @@ const Navbar = ({showSidebar,setShowSidebar}) => {
           </ul>
 
           {showModal && <div className={styles.modalContainer}/* {`${styles.modalContainer} ${showAccount ? styles.containerExpanded : ''}`} */>
-
-            {windowWidth < 575 && 
+             {windowWidth < 575 && 
              <div className={styles.letter2}>
                       <h3>{username}</h3>
                       <p>{profileName} / {contasArray.length > 0 && contasArray[0].name}</p> 
              </div>}
-             {/* <div className={styles.modalText} onClick={() => { setShowAccount(!showAccount)}}>Trocar Conta</div>
+            {/*  <div className={styles.modalText} onClick={() => { setShowAccount(!showAccount)}}>Trocar Conta</div>
              {showAccount && contasArray.map((conta,index) => 
                 <a className={styles.modalText2} key={index} onClick={() => changeAccount(conta.id)}>{conta.name}</a>
              )} */}
@@ -285,23 +282,23 @@ const Navbar = ({showSidebar,setShowSidebar}) => {
 
           {showModal2 && <div className={styles.modalContainer2}>
               <Button outline style={{width:"150px"}} onClick={() => changeModule("admin")}><FcFolder size={40}/><br/>Administração</Button>
-              <Button outline style={{width:"150px"}} onClick={() => Constantes.urlFrontRoutes != "" ? changeModule("routes") : null}>
+              <Button outline disabled={Constantes.urlFrontRoutes == ""} style={{width:"150px"}} onClick={() => Constantes.urlFrontRoutes != "" ? changeModule("routes") : null}>
                                            <FaRoute size={40} color={Constantes.urlFrontRoutes != "" ? "#d41400" : null}/><br/>Rotas</Button>
-              <Button outline style={{width:"150px"}} onClick={() => Constantes.urlFrontStock != "" ? changeModule("stock") : null}>
+              <Button outline disabled={Constantes.urlFrontStock == ""}  style={{width:"150px"}} onClick={() => Constantes.urlFrontStock != "" ? changeModule("stock") : null}>
                                <TbBuildingWarehouse size={40} color={Constantes.urlFrontStock != "" ? "#1400D4" : null}/><br/>Estoque</Button>
-              <Button outline style={{width:"150px"}} onClick={() => Constantes.urlFrontPatrimony != "" ? changeModule("patrimony") : null}>
+              <Button outline disabled={Constantes.urlFrontPatrimony == ""} style={{width:"150px"}} onClick={() => Constantes.urlFrontPatrimony != "" ? changeModule("patrimony") : null}>
                                              <FaCar size={40} color={Constantes.urlFrontPatrimony != "" ? "#d45f00" : null}/><br/>Patrimônio</Button>
-              <Button outline style={{width:"150px"}} onClick={() => Constantes.urlFrontCosts != "" ? changeModule("costs") : null}>
+              <Button outline disabled={Constantes.urlFrontCosts == ""} style={{width:"150px"}} onClick={() => Constantes.urlFrontCosts != "" ? changeModule("costs") : null}>
                                   <FaHandHoldingUsd size={40} color={Constantes.urlFrontCosts != "" ? "#00d41d" : "grey"}/><br/>Custos</Button>
               <Button outline disabled={Constantes.urlFrontReports == ""} style={{width:"150px"}} onClick={() => Constantes.urlFrontReports != "" ? changeModule("reports") : null}>
                                         <FaChartBar size={40} color={Constantes.urlFrontReports != "" ? "#1705bbff" : "grey"}/><br/>Relatórios</Button>
           </div>}
 
+
           <ModalStyle  open={showModal3} title="Trocar Senha" onClick={() => {}} toggle={() => setShowModal3(!showModal3)} noButtons={true}>
              <FormTrocarSenha userId={userId} externalAction={() => setShowModal3(false)}/>
-          </ModalStyle> 
+          </ModalStyle>
 
-          
           <ModalStyle size={sizeModal4} 
                       open={showModal4} 
                       title="Alertas" 

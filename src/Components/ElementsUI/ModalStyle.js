@@ -10,7 +10,7 @@ export default function ModalStyle({open,toggle,title,size,onClick,onCancel,chil
             {!noButtons && <>
              <Button style={{backgroundColor:"#009e8b"}} onClick={onClick}>{textButtons && textButtons[0] || "Confirmar"}</Button>
              <Button style={{backgroundColor:"#e5484d"}} onClick={onCancel ? onCancel : toggle}>{textButtons && textButtons[1] || "Cancelar"}</Button>
-             </>}
+            </>}
          </ModalFooter>
       </Modal>);
 }

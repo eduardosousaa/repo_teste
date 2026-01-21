@@ -1,9 +1,6 @@
 {
-  "name": "estoque-front-react",
-  "version": "0.1.0",
-  "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -23,10 +20,5 @@
     "react-leaflet": "^5.0.0",
     "react-select": "^5.10.1",
     "reactstrap": "^9.2.3"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.1"
   }
 }

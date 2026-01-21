@@ -52,7 +52,7 @@ export function AuthProvider({children}) {
                           });
                           setCookie(undefined,"contas",JSON.stringify(body),{path:"/"});
                           getInfo(headers,body[0].id);
-                          router.push("/custos");
+                          router.push("/admin");
                         break;
                         case 404:
                           console.log("erro:",body);
@@ -73,12 +73,12 @@ export function AuthProvider({children}) {
 
     async function getInfo(token1,id){ 
        
-        await fetch(Constantes.urlBackAdmin + 'admin/info?' + new URLSearchParams({accountId: id,filterProfile: ["COSTS","ROUTES","STOCK"]}), {
+        await fetch(Constantes.urlBackAdmin + 'admin/info?' + new URLSearchParams({accountId: id,filterProfile: ["ADMINISTRATION","STOCK"]}), {
                      method: 'GET',
                      headers: {
                          'Content-Type': 'application/json',
                          'Module': 'ADMINISTRATION',
-                         'Authorization': `Bearer ${token1}`
+                         'Authorization': token1
                      },
                      }).then((response) => 
                         response.json().then(data => ({
@@ -130,8 +130,8 @@ export function AuthProvider({children}) {
               setCookie(undefined,"token2",parse.token2,{path:"/"});
               setCookie(undefined,"contas",parse.contas,{path:"/"});
               localStorage.removeItem('dataForModule');
-          } else { */ 
-            router.push(Constantes.urlFrontAdmin != "" ? Constantes.urlFrontAdmin + "login" : "/login");
+          } else { */
+            router.push("/login");
           /* } */
         }else{
           /* if(pathname.includes("admin") || pathname.includes("/login")){
@@ -153,7 +153,7 @@ export function AuthProvider({children}) {
    if(loading){
      return (<LoadingGif/>);
    }
-   
+
    return (
 
         <AuthContext.Provider value={{ contas, signIn, getInfo, permissions, profileName, username, userId }}>
